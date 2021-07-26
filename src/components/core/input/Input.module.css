@@ -1,15 +1,43 @@
 .label {
-    display: block;
-    transform: translate(0.5rem, -2.5rem);
     font-size: 12px;
-  }
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    position: relative;
+}
   
 .input {
+    width: 100%;
     margin-top: 1.5rem;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.errorContainer .input {
+    border-color: #990F02;
+}
+
+.error {
+    position:absolute;
+    color: #990F02;
+    font-size: 11px;
+    top: 55px;
+}
+
+.additionalInfo {
+    color: #999;
+    font-size: 11px;
+}
+
+.icon {
+    width: 18px;
+    margin-top: -1.3rem;
+    cursor: pointer;
+    padding: 0 16px;
 }
   
 .input:focus {
@@ -17,15 +45,19 @@
 }
   
 @supports (not (-ms-ime-align:auto)) {
-    .label {
+    .label, .label .text {
         color: #999;
-        transform: translate(0.25rem, -1.5rem);
+        transform: translate(0.25rem, -0.75rem);
         transition: all 0.2s ease-out;
     }
+
+    .errorContainer .label .text {
+        color: #990F02;
+    }
       
-    .input:focus + .label,
-    .input:not(:placeholder-shown) + .label {
-        transform: translate(0.5rem, -2.5rem);
+    .input:focus + .label .text,
+    .input:not(:placeholder-shown) + .label .text {
+        transform: translate(0.5rem, -1.9rem);
         font-size: 10px;
         background: #fff;
         width: fit-content;

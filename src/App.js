@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import SignUpPage from './components/pages/auth/SignUpPage/SignUpPage';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import StartSteps from './components/containers/StartSteps/StartSteps';
 
 const App = () => {
   return <Provider store={store}>
-    <SignUpPage/>
+    <StartSteps/>
   </Provider>
 };
 

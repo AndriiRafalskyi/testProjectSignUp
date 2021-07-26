@@ -1,0 +1,14 @@
+.stepSwitcher {
+    position: absolute;
+    right: 10px;
+}
+
+.stepSwitcher .bull {
+    display: inline-block;
+    margin-left: 8px;
+    color: #777;
+}
+
+.stepSwitcher .bull.active {
+    color: #000;
+}
